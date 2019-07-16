@@ -1,0 +1,37 @@
+PROJECT 2
+
+- VMWare / Ubuntu ??
+- Periodicity - How frequently the data was acquired and added to the overall data
+
+Legend
+	(Table)
+	[Column]
+	<Row>
+
+
+Abstract
+
+Q1. Identify the countries where % of female graduates is less than 30%.
+
+
+Approach
+	Relevant Data:
+Q1.
+	(Gender_StatsData.csv)[Indicator]<SE.TER.CMPL.FE.ZS>
+	
+	SORT THE NAMES INTO JUST COUNTRIES (195 UNIQUE NAMES)
+	
+	Sort 1A - 195 Countries must be derived from 263 Country Codes.
+		- Remove "Country Name" values that contain "Small", "Least", "Low", "&",
+
+	Sort 1B - (Gender_StatsCountry.csv)[Country Name] Cross reference unique country names with (Gender_StatsData.csv)[Country Name]
+	Sort 2A - Weighted average of years 
+
+
+Implementation
+
+Q1. Get weighted average of years of question.
+
+Results
+
+Conclusions (?)
