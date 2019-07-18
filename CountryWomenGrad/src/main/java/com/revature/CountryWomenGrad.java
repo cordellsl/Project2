@@ -34,7 +34,7 @@ public class CountryWomenGrad {
 		
 		//Specify Mapper and Reducer Class
 		job.setMapperClass(GradMapper.class);
-		job.setReducerClass(GradReducer.class);
+		//job.setReducerClass(GradReducer.class);
 		
 		// Set combiner class to be used before reducer phase
 		// job.setCombinerClass(classname.class);
@@ -43,7 +43,7 @@ public class CountryWomenGrad {
 		// job.setPartitionerClass(WordPartitioner.class);
 		
 		// Don't forget to set amount of reducers for Partitioner
-		// job.setNumReduceTasks(3);
+		job.setNumReduceTasks(0);
 		
 		// Specify types of final output
 		job.setMapOutputKeyClass(Text.class);
