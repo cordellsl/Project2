@@ -2,15 +2,14 @@ package com.revature;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.DoubleWritable;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 import com.revature.map.Mapper1;
+import com.revature.map.Mapper3;
 import com.revature.reduce.Reducer1;
-import com.revature.reduce.Combiner1;
 
 public class main {
 	
@@ -27,6 +26,7 @@ public class main {
 		job.setJarByClass(main.class);
 		
 		job.setJobName("Problem 1");
+		//job.setJobName("Problem 3");
 		
 		// Input and output paths
 		FileInputFormat.setInputPaths(job, new Path(args[0]));
@@ -35,15 +35,16 @@ public class main {
 		
 		// Specify the Mapper and Reducer class 
 		job.setMapperClass(Mapper1.class);
+		//job.setMapperClass(Mapper3.class);
 		
-		//job.setReducerClass(SumReducer.class);
-		//job.setReducerClass(Reducer1.class);
+		job.setReducerClass(Reducer1.class);
 		
 		//job.setCombinerClass(Combiner1.class);
 		
 		
 		
-		job.setNumReduceTasks(0);
+		job.setNumReduceTasks(1);
+		//job.setNumReduceTasks(0);
 		
 		// Specify the types of the final output
 		job.setOutputKeyClass(Text.class);

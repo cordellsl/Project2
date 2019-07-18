@@ -3,6 +3,7 @@ package com.revature.test;
 import java.util.Arrays;
 
 import org.apache.hadoop.io.DoubleWritable;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mrunit.mapreduce.MapDriver;
@@ -12,8 +13,10 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-// Import Mapper and Reducer from com.revature.*
+
+// Import map() and reduce() from com.revature.x
 import com.revature.map.Mapper1;
+import com.revature.reduce.Reducer1;
 
 public class Test1 {
 	
@@ -27,19 +30,19 @@ public class Test1 {
 	@Before
 	public void setUp() {
 		
-		Mapper1 mapper = new Mapper1();  // Creating instance of our mapper
+		Mapper1 mapper = new Mapper1();  // Creating instance of our map class
 		mapDriver = new MapDriver<>();   // Creating instance of MapDriver
-		mapDriver.setMapper(mapper);     // Setting MapDriver to execute our mapper
+		mapDriver.setMapper(mapper);     // Setting MapDriver to execute our map()
 		
 		// Set up Reducer
-//		SumReducer reducer = new SumReducer();
-//		reduceDriver = new ReduceDriver<>();
-//		reduceDriver.setReducer(reducer);
+		Reducer1 reducer = new Reducer1();  // Creating instance of our reduce class
+		reduceDriver = new ReduceDriver<>();// Creating instance of ReduceDriver
+		reduceDriver.setReducer(reducer);   // Setting ReducerDriver to execute our reduce()
 		
 		// Set up MapReducer
-//		mapReduceDriver = new MapReduceDriver<>();
-//		mapReduceDriver.setMapper(mapper);
-//		mapReduceDriver.setReducer(reducer);
+		mapReduceDriver = new MapReduceDriver<>(); // Create instance of mapReduceDriver
+		mapReduceDriver.setMapper(mapper);         // Give mapReduceDriver our map()
+		mapReduceDriver.setReducer(reducer);       // Give mapReduceDriver our reduce()
 	}
 	
 	@Test
@@ -57,28 +60,52 @@ public class Test1 {
 		mapDriver.runTest();
 	}
 	
-//	@Test
-//	public void testReducer() {
-////		reduceDriver.withInput(new Text("cat"), Arrays.asList(new IntWritable(1), new IntWritable(1)));
-////		
-////		reduceDriver.withOutput(new Text("cat"), new IntWritable(2));
-////		
-////		reduceDriver.runTest();
-//	}
-//	
-//	@Test
-//	public void testMapReduce() {
-////		mapReduceDriver.withInput(new LongWritable(1), new Text("cat cat   dog"));
-////		
-////		mapReduceDriver.addOutput(new Text("cat"), new IntWritable(2));
-////		mapReduceDriver.addOutput(new Text("dog"), new IntWritable(1));
-//	}
+	@Test
+	public void testReducer() {
+		// Three inputs of 25%
+		reduceDriver.withInput(new Text("Albania"), Arrays.asList(new DoubleWritable(25), new DoubleWritable(25), new DoubleWritable(25)));
+		
+		// Average should be 25%
+		reduceDriver.withOutput(new Text("Albania"), new DoubleWritable(25));
+		
+		reduceDriver.runTest();
+	}
+	@Test
+	public void testReducer2() {
+		// Three inputs all above 30%
+		reduceDriver.withInput(new Text("Albania"), Arrays.asList(new DoubleWritable(41), new DoubleWritable(32), new DoubleWritable(62)));
+		
+		// No output because average would be above 30%
+		reduceDriver.runTest();
+	}
+	
+	@Test
+	public void testMapReduce() {
+		// map() will take a whole line from the table
+		String text = "\"Albania\",\"ALB\",\"Gross graduation ratio, tertiary, female (%)\",\"SE.TER.CMPL.FE.ZS\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"12.39418\",\"\",\"\",\"15.0017\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"39.7\",\"48.2\",\"51.7\",\"43.1\",\"47.2\",\"\",";
+		mapReduceDriver.withInput(new LongWritable(1), new Text(text));
+		
+		// Average would be above 30% (~45), so there is no output
+		
+		mapReduceDriver.runTest();
+	}
+	@Test
+	public void testMapReduce2() {
+		// map() will take a whole line from the table
+		String text = "\"Albania\",\"ALB\",\"Gross graduation ratio, tertiary, female (%)\",\"SE.TER.CMPL.FE.ZS\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"12.39418\",\"\",\"\",\"15.0017\",\"\",\"\",\"\",\"\",\"\",\"\",\"\",\"20.9\",\"30\",\"10.4\",\"15.2\",\"66\",\"\",";
+		mapReduceDriver.withInput(new LongWritable(1), new Text(text));
+		
+		// Average would be above 28.5%
+		mapReduceDriver.addOutput(new Text("Albania"), new DoubleWritable(28.5));
+		
+		mapReduceDriver.runTest();
+	}
 	
 	@After
 	public void tearDown() {
 		mapDriver = null;
-//		reduceDriver = null;
-//		mapReduceDriver = null;
+		reduceDriver = null;
+		mapReduceDriver = null;
 	}
 
 }
