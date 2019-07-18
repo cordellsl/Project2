@@ -9,29 +9,74 @@ Legend
 	<Row>
 
 
-Abstract
-
-Q1. Identify the countries where % of female graduates is less than 30%.
-
-
-Approach
-	Relevant Data:
 Q1.
-	(Gender_StatsData.csv)[Indicator]<SE.TER.CMPL.FE.ZS>
-	
-	SORT THE NAMES INTO JUST COUNTRIES (195 UNIQUE NAMES)
-	
-	Sort 1A - 195 Countries must be derived from 263 Country Codes.
-		- Remove "Country Name" values that contain "Small", "Least", "Low", "&",
+	ABSTRACT: Identify the countries where % of female graduates is less than 30%.
+	APPROACH: Find the most recent years for non-null values for the <Indicator Code> "SE.TER.CMPL.FE.ZS" up to five years combined. Take these percentages and find the average by dividing the sum of the percentages by the number of percentages (years accounted for). Finally, countries with final aggregate percentages less than 30% are filtered out of the final results.
+	IMPLEMENTATION: In (Gender_StatsData.csv), find <Indicator Code> "SE.TER.CMPL.FE.ZS" for each country for the most recent years up to five.
+		Main Function: 
+		Mapper:
+			map(LongWritable key, Text value, Context context)
+				- Splits the line by instances of ","
+				- Iterates through the array of those separated values and checks for SE.TER.CMPL.FE.ZS
+				- Then iterates backwards through said row and for each year, as long as the value isn't null and the count isn't already at 5, the loop adds it to the output pair of {|Text| Country, |DoubleWritable| Percentage}
+		Reducer: 
+			reduce(Text key, Iterable<DoubleWritable> values, Context context)
+				- Creates an ArrayList
+				- For each key, value pairing, iterates through the values Iterable object, adding the percentage to nums if it isn't null.
+				- Calculates the average percentage from those values and creates an output pair of the country name and the resulting average precentage
 
-	Sort 1B - (Gender_StatsCountry.csv)[Country Name] Cross reference unique country names with (Gender_StatsData.csv)[Country Name]
-	Sort 2A - Weighted average of years 
+	TESTS: 
+		Test 1 - Checks map() for Albania with most recent five year percentages from the table.
+		Test 2 -
+		Test 3 -
+	RESULTS:
+		
+	CONCLUSIONS:
+
+	/**
+	 * <h3>Mapper Functionality</h3>
+	 * _____________________________
+	 * <p>
+	 * Outputs a country name, percentage pairing for each year instance of the percentage
+	 * of women moving on to tertiary education; represented in
+	 * the row with the Indicator Code column value "SE.TER.CMPL.FE.ZS". Output represented as
+	 * a <b>Text</b> object and a <b>DoubleWritable</b> object.
+	 * <p>
+	 * Output format: [Text: Country Name, DoubleWritable: Percentage from Particular Year]
+	 *
+	 * @param key <b>(LongWritable):</b> The byte offset.
+	 * @param value <b>(Text):</b> Raw text of the line.
+	 * @param context <b>(Context):</b> Object denoting the output of the map() function.
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws InterruptedException the interrupted exception
+	 */
 
 
-Implementation
+	/**
+	 * <h3>Reducer Functionality</h3>
+	 * ______________________________
+	 * <p>
+	 * 
+	 * Outputs the name of a country with its average percentage of women moving to
+	 * tertiary education over a five year period of time.
+	 * The percentage is weighted in order to give even percentage to each available
+	 * year. Only the aggregated values above 30% are included in the final output.
+	 * <p>
+	 * Example: If Bolivia has five years worth of data, each year contributes
+	 * to 20% of the final overall reduce() output. If Gambia has only two years,
+	 * each year is worth 50% in the final output.
+	 *
+	 * @param key <b>(Text):</b> The country name.
+	 * @param values <b>(Iterable of DoubleWritable):</b> An array of doubles that represent percentages from each year.
+	 * @param context <b>(Context):</b> A Context object representing the output for the function.
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws InterruptedException the interrupted exception
+	 */
 
-Q1. Get weighted average of years of question.
-
-Results
-
-Conclusions (?)
+Q3. 
+	ABSTRACT:
+	APPROACH:
+	IMPLEMENTATION:
+	TESTS:
+	RESULTS: 
+	CONCLUSIONS:
