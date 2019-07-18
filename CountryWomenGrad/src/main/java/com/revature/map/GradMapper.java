@@ -3,7 +3,6 @@ package com.revature.map;
 import java.io.IOException;
 
 import org.apache.hadoop.io.DoubleWritable;
-import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.MapWritable;
 import org.apache.hadoop.io.Text;
@@ -24,6 +23,7 @@ public class GradMapper extends Mapper <LongWritable, Text, Text, DoubleWritable
 		for(String i : columns) {
 			if(i.equals("SE.TER.CMPL.FE.ZS")) {
 				count = 0;
+				
 				
 				for(int j=columns.length-2; j >= 4; j--) {
 					if(count == 5) { break; }
