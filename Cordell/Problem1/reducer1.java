@@ -10,6 +10,28 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Reducer;
 
 public class Reducer1 extends Reducer <Text, DoubleWritable, Text, DoubleWritable> {
+	
+	
+	/**
+	 * <h3>Reducer Functionality</h3>
+	 * ______________________________
+	 * <p>
+	 * 
+	 * Outputs the name of a country with its average percentage of women moving to
+	 * tertiary education over a five year period of time.
+	 * The percentage is weighted in order to give even percentage to each available
+	 * year. Only the aggregated values above 30% are included in the final output.
+	 * <p>
+	 * Example: If Bolivia has five years worth of data, each year contributes
+	 * to 20% of the final overall reduce() output. If Gambia has only two years,
+	 * each year is worth 50% in the final output.
+	 *
+	 * @param key <b>(Text):</b> The country name.
+	 * @param values <b>(Iterable of DoubleWritable):</b> An array of doubles that represent percentages from each year.
+	 * @param context <b>(Context):</b> A Context object representing the output for the function.
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws InterruptedException the interrupted exception
+	 */
 
 	// Will find the averages of each percent of each country and return the countries
 	// with women's graduation rate less than 30% 
