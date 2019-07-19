@@ -24,14 +24,8 @@ Q1.
 				- Creates an ArrayList
 				- For each key, value pairing, iterates through the values Iterable object, adding the percentage to nums if it isn't null.
 				- Calculates the average percentage from those values and creates an output pair of the country name and the resulting average precentage
-
-	TESTS: 
-		Test 1 - Checks map() for Albania with most recent five year percentages from the table.
-		Test 2 -
-		Test 3 -
-	RESULTS:
 		
-	CONCLUSIONS:
+	CONCLUSIONS: Out of 89 nations, the vast majority included in the final output are those typically classified as Third World. Those in Sub-Saharan Africa are on average on the lower end of the percentage range while those in Asia are the closest to 30%.
 
 	/**
 	 * <h3>Mapper Functionality</h3>
@@ -77,6 +71,7 @@ Q3.
 	ABSTRACT:
 	APPROACH:
 	IMPLEMENTATION:
-	TESTS:
-	RESULTS: 
 	CONCLUSIONS:
+Results
+
+Conclusions (?)
