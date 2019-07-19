@@ -1,8 +1,5 @@
 PROJECT 2
 
-- VMWare / Ubuntu ??
-- Periodicity - How frequently the data was acquired and added to the overall data
-
 Legend
 	(Table)
 	[Column]
