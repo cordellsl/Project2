@@ -73,6 +73,17 @@ Q3.
 		Mapper:
 			map(LongWritable key, Text value, Context context)
 		Reducer:
-			reduce(
+			reduce(Text key, Iterable<DoubleWritable> values, Context context)
 	CONCLUSIONS:
 
+Q2.
+	ABSTRACT:
+	APPROACH:
+	IMPLEMENTATION:
+	CONCLUSIONS:
+
+Q4.
+	ABSTRACT:
+	APPROACH:
+	IMPLEMENTATION:
+	CONCLUSIONS:
