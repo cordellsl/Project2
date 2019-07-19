@@ -68,8 +68,8 @@ Q1.
 	 */
 
 Q3. 
-	ABSTRACT:
-	APPROACH:
+	ABSTRACT: List the % of change made in male employment in the year 2000.
+	APPROACH: Find the percent change for the year 2000 to the nearest available year (max 2016) for each country with qualifying data. If the year 2000 is not found, the country is not applicable to the data.
 	IMPLEMENTATION:
 	CONCLUSIONS:
 Results
