@@ -19,7 +19,6 @@ public class Mapper3 extends Mapper<LongWritable, Text, Text, Text>{
 	 * Checks for the indicator code "SL.EMP.TOTL.SP.MA.NE.ZS" in each array then finds the
 	 * corresponding values for the years 2000 and the most recent year (max 2016).
 	 * Outputs the country name as a Text object and the years as one divided by a comma.
-	 * a <b>Text</b> object and a <b>DoubleWritable</b> object.
 	 * <p>
 	 * Output format: [Text: Country Name, Text: (Year 2000 %, Most Recent Year %)]
 	 *
