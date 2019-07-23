@@ -14,6 +14,23 @@ import com.revature.reduce.Reducer3;
 
 public class main {
 	
+	/**
+	 * <b>MapReduce for Men's Employment Change Globally</b> <br>
+	 * ________________________________________________________ <br>
+	 * <br>
+	 * 
+	 * Using MapReduce, this program finds the percent change in the male employment 
+	 * for the year 2000 to the nearest available year (max 2016) 
+	 * for each country with [Indicator Code] SL.EMP.TOTL.SP.MA.NE.ZS 
+	 * (employment to population ratio, 15+, male (national estimate)). 
+	 * If data for the year 2000 is not found, the country will not be included.
+	 *
+	 * @param args the arguments
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws ClassNotFoundException the class not found exception
+	 * @throws InterruptedException the interrupted exception
+	 */
+	
 	public static void main(String[] args) throws Exception {
 		
 		if(args.length != 2) {
