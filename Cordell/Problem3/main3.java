@@ -10,7 +10,7 @@ import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import com.revature.map.Mapper1;
 import com.revature.map.Mapper3;
 import com.revature.reduce.Reducer1;
-import com.revature.reduce.Combiner1;
+import com.revature.reduce.Reducer3;
 
 public class main {
 	
@@ -38,18 +38,21 @@ public class main {
 		//job.setMapperClass(Mapper1.class);
 		job.setMapperClass(Mapper3.class);
 		
-		//job.setReducerClass(SumReducer.class);
 		//job.setReducerClass(Reducer1.class);
+		job.setReducerClass(Reducer3.class);
 		
 		//job.setCombinerClass(Combiner1.class);
 		
-		
-		
-		job.setNumReduceTasks(0);
+		job.setNumReduceTasks(1);
+		//job.setNumReduceTasks(0);
 		
 		// Specify the types of the final output
 		job.setOutputKeyClass(Text.class);
-		job.setOutputValueClass(DoubleWritable.class);
+		//job.setOutputValueClass(DoubleWritable.class);
+		
+		job.setOutputValueClass(Text.class);
+		
+		
 		
 		// Check if job completed
 		boolean success = job.waitForCompletion(true);

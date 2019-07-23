@@ -9,9 +9,9 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Mapper.Context;
 
-public class Mapper3 extends Mapper<LongWritable, Text, Text, DoubleWritable>{
+public class Mapper3 extends Mapper<LongWritable, Text, Text, Text>{
 	
-	
+	@Override
 	protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 		
 		// Assume getting row of table 
@@ -29,6 +29,7 @@ public class Mapper3 extends Mapper<LongWritable, Text, Text, DoubleWritable>{
 			
 			// if row contains % of male employment 
 			if(i.equals("SL.EMP.TOTL.SP.MA.NE.ZS")) {
+				//SL.EMP.TOTL.SP.FE.NE.ZS   // Same code for female
 				
 				// loop through the columns that contain percentages 
 				for(int j=columns.length-2; j >= 44; j--) {
@@ -46,8 +47,9 @@ public class Mapper3 extends Mapper<LongWritable, Text, Text, DoubleWritable>{
 					
 					// if both years have been found, then write to context 
 					if( !(year2000 == null) && !(yearNew == null) ) {
-						context.write(new Text( columns[0].substring(1) ), new DoubleWritable( year2000 ));
-						context.write(new Text( columns[0].substring(1) ), new DoubleWritable( yearNew ));}
+						
+						String answer = year2000 + ", " + yearNew;
+						context.write(new Text( columns[0].substring(1) ), new Text( answer ));}
 					
 					
 				}
