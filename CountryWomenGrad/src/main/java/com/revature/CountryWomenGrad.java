@@ -15,6 +15,23 @@ import com.revature.reducer.GradReducer;
 
 
 public class CountryWomenGrad {
+	/**
+	 * <b>MapReduce for Women's Graduation Rate Globally</b> <br>
+	 * ________________________________________________________ <br>
+	 * <br>
+	 * 
+	 * Using MapReduce, find the most recent years for non-null values for 
+	 * gross graduation ratio for females in tertiary education up to five years combined. 
+	 * Take these percentages and find the average by dividing the sum 
+	 * of the percentages by the number of percentages (years accounted for). 
+	 * Finally, the countries with the final aggregate percentages less than 30% 
+	 * are filtered out of the final results.
+	 *
+	 * @param args the arguments
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws ClassNotFoundException the class not found exception
+	 * @throws InterruptedException the interrupted exception
+	 */
 
 	public static void main(String[] args) throws IOException, ClassNotFoundException, InterruptedException {
 
