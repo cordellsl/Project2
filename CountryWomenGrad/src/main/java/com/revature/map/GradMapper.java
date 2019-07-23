@@ -17,8 +17,7 @@ public class GradMapper extends Mapper <LongWritable, Text, Text, DoubleWritable
 	 * <p>
 	 * Outputs a country name, percentage pairing for each year instance of the percentage
 	 * of women moving on to tertiary education; represented in
-	 * the row with the Indicator Code column value "SE.TER.CMPL.FE.ZS". Output represented as
-	 * a <b>Text</b> object and a <b>DoubleWritable</b> object.
+	 * the row with the Indicator Code column value "SE.TER.CMPL.FE.ZS".
 	 * <p>
 	 * Output format: [Text: Country Name, DoubleWritable: Percentage from Particular Year]
 	 *
