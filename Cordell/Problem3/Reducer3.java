@@ -11,6 +11,24 @@ import org.apache.hadoop.mapreduce.Reducer;
 public class Reducer3 extends Reducer <Text, Text, Text, DoubleWritable>{
 //public class Reducer3 extends Reducer <Text, Text, Text, Text>{
 	
+	/**
+	 * <h3>Reducer Functionality</h3>
+	 * _____________________________
+	 * <p>
+	 * Takes each line from the mapper and for each of the Text value pairings
+	 * splits the string by comma and converts it into a Double to find the
+	 * percentage difference between the two years' statistics. Outputs said
+	 * difference.
+	 * <p>
+	 * Output format: [Text: Country Name, DoubleWritable: % of Change between 2000 and Newest Year]
+	 *
+	 * @param key <b>(Text):</b> The country name.
+	 * @param value <b>(Text):</b> 2000 and the most recent year's percentage for male employment.
+	 * @param context <b>(Context):</b> Object denoting the output of the reduce() function.
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws InterruptedException the interrupted exception
+	 */
+	
 	@Override
 	protected void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
 		
