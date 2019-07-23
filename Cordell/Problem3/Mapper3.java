@@ -10,6 +10,25 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Mapper.Context;
 
 public class Mapper3 extends Mapper<LongWritable, Text, Text, Text>{
+
+	/**
+	 * <h3>Mapper Functionality</h3>
+	 * _____________________________
+	 * <p>
+	 * Takes each line of the input file and splits it by comma into an array of strings.
+	 * Checks for the indicator code "SL.EMP.TOTL.SP.MA.NE.ZS" in each array then finds the
+	 * corresponding values for the years 2000 and the most recent year (max 2016).
+	 * Outputs the country name as a Text object and the years as one divided by a comma.
+	 * a <b>Text</b> object and a <b>DoubleWritable</b> object.
+	 * <p>
+	 * Output format: [Text: Country Name, Text: (Year 2000 %, Most Recent Year %)]
+	 *
+	 * @param key <b>(LongWritable):</b> The byte offset.
+	 * @param value <b>(Text):</b> Raw text of the line.
+	 * @param context <b>(Context):</b> Object denoting the output of the map() function.
+	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws InterruptedException the interrupted exception
+	 */
 	
 	@Override
 	protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
