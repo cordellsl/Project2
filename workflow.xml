@@ -6,7 +6,20 @@
         <sqoop xmlns="uri:oozie:sqoop-action:0.2">
             <job-tracker>${job_tracker}</job-tracker>
             <name-node>${name_node}</name-node>
-            <command>job --meta-connect ${sqoop_metastore} --exec student_job</command>
+            <command>
+                job --create sqoop_export
+                --export
+                --connect jdbc:mysql://localhost/${database}
+                --username ${username}
+                --password ${password}
+                --table ${table1}
+                --target-dir 'output /sqoop-append'
+                --fields-terminated-by ','
+                --incremental append
+                -m 1
+
+                job sqoop_export --exec 
+            </command>
         </sqoop>
         <ok to = "mysql-cleaning" />
         <error to = "kill" />
@@ -24,15 +37,27 @@
             </configuration>
             <script>${sh_script_loc}/mysql.sh</script>
         </shell>
-        <ok to="sqoop-export2" />
+        <ok to="sqoop-import" />
         <error to="fail" />
     </action>
 
-    <action name = "sqoop-export2">
+    <action name = "sqoop-import">
         <sqoop xmlns="uri:oozie:sqoop-action:0.2">
             <job-tracker>${job_tracker}</job-tracker>
             <name-node>${name_node}</name-node>
-            <command></command>
+            <command>
+                job --create sqoop_import 
+                --import 
+                --connect jdbc:mysql://localhost/${database} 
+                --username ${username} 
+                --password ${password} 
+                --table ${table2} 
+                --input-fields-terminated-by '|'
+                --target-dir 'output /sqoop-all'
+                -m 1
+
+                job sqoop_import --exec
+            </command>
         </sqoop>
         <ok to = "hive-create" />
         <error to = "kill" />
