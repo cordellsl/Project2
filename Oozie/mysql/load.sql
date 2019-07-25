@@ -1,0 +1,12 @@
+USE GENDER_DB;
+
+-- MAY CHANGE PATH AGAIN TO REFERENCE .CSV FILE
+-- '/home/cloudera/Data/Gender/Gender_StatsData.csv'
+
+LOAD DATA LOCAL INFILE
+'/media/sf_genter-stats-data/Gender_StatsData.csv'
+INTO TABLE DATA_BY_COUNTRY
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;

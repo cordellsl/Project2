@@ -1,0 +1,66 @@
+<workflow-app>
+    <start to = "sqoop-export"/>
+    <action name = "sqoop-export">
+     <!-- Sqoop Import from flat file to MySQL Action Node -->
+    <action name="sqoop-export">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${job_tracker}</job-tracker>
+            <name-node>${name_node}</name-node>
+            <command>job --meta-connect ${sqoop_metastore} --exec student_job</command>
+        </sqoop>
+        <ok to = "mysql-cleaning" />
+        <error to = "kill" />
+    </action>
+
+    <action name='mysql-cleansing'>
+        <shell xmlns="uri:oozie:shell-action:0.1">
+            <job-tracker>${job_tracker}</job-tracker>
+            <name-node>${name_node}</name-node>
+            <configuration>
+                <property>
+                  <name>mapred.job.queue.name</name>
+                  <value>${queueName}</value>
+                </property>
+            </configuration>
+            <script>${sh_script_loc}/mysql.sh</script>
+        </shell>
+        <ok to="sqoop-export2" />
+        <error to="fail" />
+    </action>
+
+    <action name = "sqoop-export2">
+        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+            <job-tracker>${job_tracker}</job-tracker>
+            <name-node>${name_node}</name-node>
+            <command></command>
+        </sqoop>
+        <ok to = "hive-create" />
+        <error to = "kill" />
+    </action>
+
+    <action name = "hive-create">
+        <hive xmlns="uri:hive:hive-action:0.4">
+            <job-tracker>${job_tracker}</job-tracker>
+            <name-node>${name_node}</name-node>
+            <script>${hive_script_loc}/create.sql</script>
+        </hive>
+        <ok to = "hive-load" />
+        <error to = "kill" />
+    </action>
+
+    <action name = "hive-load">
+        <hive xmlns="uri:hive:hive-action:0.4">
+            <job-tracker>${job_tracker}</job-tracker>
+            <name-node>${name_node}</name-node>
+            <script>${hive_script_loc}/load.sql</script>
+        </hive>
+        <ok to = "end" />
+        <error to = "kill" />
+    </action>
+
+    <kill name = "kill">
+        <message>Oozie job terminated with errors.</message>
+    </kill>
+
+    <end name = "end" />
+</workflow-app>
