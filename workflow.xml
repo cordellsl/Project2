@@ -1,91 +1,69 @@
-<workflow-app>
-    <start to = "sqoop-export"/>
-    <action name = "sqoop-export">
-     <!-- Sqoop Import from flat file to MySQL Action Node -->
-    <action name="sqoop-export">
-        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
+<workflow-app name="oozie-hive-question5" xmlns="uri:oozie:workflow:0.4">
+    <!-- Start job control node -->
+    <start to="hive-create" />
+    
+    <!-- Hive create table -->
+    <action name="hive-create-table">
+        <hive xmlns="uri:oozie:hive-action:0.4">
             <job-tracker>${job_tracker}</job-tracker>
             <name-node>${name_node}</name-node>
-            <command>
-                job --create sqoop_export
-                --export
-                --connect jdbc:mysql://localhost/${database}
-                --username ${username}
-                --password ${password}
-                --table ${table1}
-                --target-dir 'output /sqoop-append'
-                --fields-terminated-by ','
-                --incremental append
-                -m 1
-
-                job sqoop_export --exec 
-            </command>
-        </sqoop>
-        <ok to = "mysql-cleaning" />
-        <error to = "kill" />
-    </action>
-
-    <action name='mysql-cleansing'>
-        <shell xmlns="uri:oozie:shell-action:0.1">
-            <job-tracker>${job_tracker}</job-tracker>
-            <name-node>${name_node}</name-node>
+            <!-- Set up connection to the actual Hive Metastore -->
             <configuration>
                 <property>
-                  <name>mapred.job.queue.name</name>
-                  <value>${queueName}</value>
+                    <name>hive.metastore.uris</name>
+                    <value>thrift://localhost:9083</value>
                 </property>
             </configuration>
-            <script>${sh_script_loc}/mysql.sh</script>
-        </shell>
-        <ok to="sqoop-import" />
-        <error to="fail" />
-    </action>
-
-    <action name = "sqoop-import">
-        <sqoop xmlns="uri:oozie:sqoop-action:0.2">
-            <job-tracker>${job_tracker}</job-tracker>
-            <name-node>${name_node}</name-node>
-            <command>
-                job --create sqoop_import 
-                --import 
-                --connect jdbc:mysql://localhost/${database} 
-                --username ${username} 
-                --password ${password} 
-                --table ${table2} 
-                --input-fields-terminated-by '|'
-                --target-dir 'output /sqoop-all'
-                -m 1
-
-                job sqoop_import --exec
-            </command>
-        </sqoop>
-        <ok to = "hive-create" />
-        <error to = "kill" />
-    </action>
-
-    <action name = "hive-create">
-        <hive xmlns="uri:hive:hive-action:0.4">
-            <job-tracker>${job_tracker}</job-tracker>
-            <name-node>${name_node}</name-node>
-            <script>${hive_script_loc}/create.sql</script>
+            <script>${scripts_location}/create_table.sql</script>
         </hive>
-        <ok to = "hive-load" />
-        <error to = "kill" />
+
+        <ok to="hive-create-view" />
+        <error to="kill" />
     </action>
 
-    <action name = "hive-load">
-        <hive xmlns="uri:hive:hive-action:0.4">
+    <!-- Hive create view -->
+    <action name="hive-create-view">
+        <hive xmlns="uri:oozie:hive-action:0.4">
             <job-tracker>${job_tracker}</job-tracker>
             <name-node>${name_node}</name-node>
-            <script>${hive_script_loc}/load.sql</script>
+            <!-- Set up connection to the actual Hive Metastore -->
+            <configuration>
+                <property>
+                    <name>hive.metastore.uris</name>
+                    <value>thrift://localhost:9083</value>
+                </property>
+            </configuration>
+            <script>${scripts_location}/create_view.sql</script>
         </hive>
-        <ok to = "end" />
-        <error to = "kill" />
+
+        <ok to="hive-calc" />
+        <error to="kill" />
     </action>
 
-    <kill name = "kill">
-        <message>Oozie job terminated with errors.</message>
+    <!-- Hive calculation for business question -->
+    <action name="hive-calc">
+        <hive xmlns="uri:oozie:hive-action:0.4">
+            <job-tracker>${job_tracker}</job-tracker>
+            <name-node>${name_node}</name-node>
+            <!-- Set up connection to the actual Hive Metastore -->
+            <configuration>
+                <property>
+                    <name>hive.metastore.uris</name>
+                    <value>thrift://localhost:9083</value>
+                </property>
+            </configuration>
+            <script>${scripts_location}/calc.sql</script>
+        </hive>
+
+        <ok to="end" />
+        <error to="kill" />
+    </action>
+
+    <!-- Kill job control node -->
+    <kill name="kill">
+        <message>Oozie job for Hive terminated with errors.</message>
     </kill>
 
-    <end name = "end" />
+    <!-- End job control node -->
+    <end name="end" />
 </workflow-app>
