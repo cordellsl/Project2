@@ -1,6 +1,6 @@
 <workflow-app name="oozie-hive-question5" xmlns="uri:oozie:workflow:0.4">
     <!-- Start job control node -->
-    <start to="hive-create" />
+    <start to="hive-create-table" />
     
     <!-- Hive create table -->
     <action name="hive-create-table">
