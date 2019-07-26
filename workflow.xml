@@ -3,7 +3,7 @@
     <start to="hive-create-table" />
     
     <!-- Hive create table -->
-    <action name="hive-create-table">
+    <action name="hive-create">
         <hive xmlns="uri:oozie:hive-action:0.4">
             <job-tracker>${job_tracker}</job-tracker>
             <name-node>${name_node}</name-node>
@@ -14,15 +14,15 @@
                     <value>thrift://localhost:9083</value>
                 </property>
             </configuration>
-            <script>${scripts_location}/create_table.sql</script>
+            <script>${scripts_location}/create.sql</script>
         </hive>
 
-        <ok to="hive-create-view" />
+        <ok to="hive-load" />
         <error to="kill" />
     </action>
 
     <!-- Hive create view -->
-    <action name="hive-create-view">
+    <action name="hive-load">
         <hive xmlns="uri:oozie:hive-action:0.4">
             <job-tracker>${job_tracker}</job-tracker>
             <name-node>${name_node}</name-node>
@@ -33,7 +33,7 @@
                     <value>thrift://localhost:9083</value>
                 </property>
             </configuration>
-            <script>${scripts_location}/create_view.sql</script>
+            <script>${scripts_location}/load.sql</script>
         </hive>
 
         <ok to="hive-calc" />
