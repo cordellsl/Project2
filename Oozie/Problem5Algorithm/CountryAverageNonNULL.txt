@@ -1,0 +1,69 @@
+SELECT COUNTRY_NAME, INDICATOR_NAME, INDICATOR_CODE,
+((`2000`+`2001`+`2002`+`2003`+`2004`+`2005`+`2006`+`2007`+`2008`+`2009`+`2010`+`2011`+`2012`+`2013`+`2014`+`2015`+`2016`)/16)
+AS 'AVERAGE (2000-2016)'
+FROM DATA_BY_COUNTRY WHERE
+((`2000`+`2001`+`2002`+`2003`+`2004`+`2005`+`2006`+`2007`+`2008`+`2009`+`2010`+`2011`+`2012`+`2013`+`2014`+`2015`+`2016`)/16) != 0.0 
+AND INDICATOR_CODE='SL.EMP.SELF.FE.ZS';
+
++--------------------------------+------------------------------------------------+-------------------+---------------------+
+| COUNTRY_NAME                   | INDICATOR_NAME                                 | INDICATOR_CODE    | AVERAGE (2000-2016) |
++--------------------------------+------------------------------------------------+-------------------+---------------------+
+| Central Europe and the Baltics | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     19.845838904381 |
+| Euro area                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     12.044194996357 |
+| Europe & Central Asia          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      1.781562387943 |
+| European Union                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     13.025808811188 |
+| High income                    | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     10.999967575073 |
+| North America                  | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      6.784797817469 |
+| OECD members                   | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     12.143227338791 |
+| Post-demographic dividend      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     10.671593129635 |
+| Argentina                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      7.182500123978 |
+| Armenia                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      1.884374976158 |
+| Australia                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     14.332500159740 |
+| Austria                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     11.045000016689 |
+| Belarus                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.148124992847 |
+| Belgium                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     11.672499954700 |
+| Bulgaria                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     10.454374909401 |
+| Canada                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     12.315624892712 |
+| Costa Rica                     | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      5.080000042915 |
+| Croatia                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     16.923125028610 |
+| Cyprus                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     13.891874909401 |
+| Czech Republic                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     11.563124954700 |
+| Denmark                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      5.775000005960 |
+| Estonia                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      5.296250015497 |
+| Fiji                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     10.198125123978 |
+| Finland                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      8.803124904633 |
+| France                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      8.286249935627 |
+| Germany                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      8.502500057220 |
+| Greece                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     32.370000123978 |
+| Hungary                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      9.156250000000 |
+| Iceland                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      8.669374972582 |
+| Ireland                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      7.717500060797 |
+| Italy                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     19.785624980927 |
+| Japan                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     13.235625028610 |
+| Korea, Rep.                    | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     29.088124752045 |
+| Latvia                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     10.112500011921 |
+| Lithuania                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     12.503125131130 |
+| Luxembourg                     | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      6.966250061989 |
+| Macedonia, FYR                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     14.879375100136 |
+| Malta                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      6.259999990463 |
+| Mexico                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      1.583124995232 |
+| Mongolia                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      3.009375095367 |
+| Netherlands                    | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     10.625000000000 |
+| New Zealand                    | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     12.883125007153 |
+| Norway                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      4.771249979734 |
+| Poland                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     21.426874995232 |
+| Portugal                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     22.170625090599 |
+| Romania                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     35.803750157356 |
+| Slovak Republic                | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      7.796249955893 |
+| Slovenia                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     13.164375126362 |
+| Spain                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     14.519375145435 |
+| Sweden                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      5.926249951124 |
+| Switzerland                    | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     14.251250028610 |
+| Syrian Arab Republic           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      9.500625014305 |
+| Turkey                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     51.284375190735 |
+| United Kingdom                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      8.618750035763 |
+| United States                  | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      6.123125016689 |
+| Venezuela, RB                  | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |     19.585624694824 |
+| Zimbabwe                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      4.803124904633 |
++--------------------------------+------------------------------------------------+-------------------+---------------------+
+57 rows in set (0.56 sec)

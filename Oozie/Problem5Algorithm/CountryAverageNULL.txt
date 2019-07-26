@@ -1,0 +1,218 @@
+SELECT COUNTRY_NAME, INDICATOR_NAME, INDICATOR_CODE,
+((`2000`+`2001`+`2002`+`2003`+`2004`+`2005`+`2006`+`2007`+`2008`+`2009`+`2010`+`2011`+`2012`+`2013`+`2014`+`2015`+`2016`)/16)
+AS 'AVERAGE (2000-2016)'
+FROM DATA_BY_COUNTRY WHERE
+((`2000`+`2001`+`2002`+`2003`+`2004`+`2005`+`2006`+`2007`+`2008`+`2009`+`2010`+`2011`+`2012`+`2013`+`2014`+`2015`+`2016`)/16) = 0.0
+AND INDICATOR_CODE='SL.EMP.SELF.FE.ZS';
+
++----------------------------------------------------+------------------------------------------------+-------------------+---------------------+
+| COUNTRY_NAME                                       | INDICATOR_NAME                                 | INDICATOR_CODE    | AVERAGE (2000-2016) |
++----------------------------------------------------+------------------------------------------------+-------------------+---------------------+
+| Arab World                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Caribbean small states                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Early-demographic dividend                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| East Asia & Pacific                                | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| East Asia & Pacific (excluding high income)        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| East Asia & Pacific (IDA & IBRD)                   | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Europe & Central Asia (excluding high income)      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Europe & Central Asia (IDA & IBRD)                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Fragile and conflict affected situations           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Heavily indebted poor countries (HIPC)             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| IBRD only                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| IDA & IBRD total                                   | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| IDA blend                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| IDA only                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| IDA total                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Late-demographic dividend                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Latin America & Caribbean                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Latin America & Caribbean (excluding high income)  | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Latin America & Caribbean (IDA & IBRD)             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Least developed countries: UN classification       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Low & middle income                                | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Low income                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Lower middle income                                | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Middle East & North Africa                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Middle East & North Africa (excluding high income) | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Middle East & North Africa (IDA & IBRD)            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Middle income                                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Other small states                                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Pacific island small states                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Pre-demographic dividend                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Small states                                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| South Asia                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| South Asia (IDA & IBRD)                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Sub-Saharan Africa                                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Sub-Saharan Africa (excluding high income)         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Sub-Saharan Africa (IDA & IBRD)                    | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Upper middle income                                | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| World                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Afghanistan                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Albania                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Algeria                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| American Samoa                                     | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Andorra                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Angola                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Antigua and Barbuda                                | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Aruba                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Azerbaijan                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Bahamas, The                                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Bahrain                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Bangladesh                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Barbados                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Belize                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Benin                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Bermuda                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Bhutan                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Bolivia                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Bosnia and Herzegovina                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Botswana                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Brazil                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| British Virgin Islands                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Brunei Darussalam                                  | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Burkina Faso                                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Burundi                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Cabo Verde                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Cambodia                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Cameroon                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Cayman Islands                                     | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Central African Republic                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Chad                                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Channel Islands                                    | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Chile                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| China                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Colombia                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Comoros                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Congo, Dem. Rep.                                   | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Congo, Rep.                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Cote d'Ivoire                                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Cuba                                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Curacao                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Djibouti                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Dominica                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Dominican Republic                                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Ecuador                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Egypt, Arab Rep.                                   | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| El Salvador                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Equatorial Guinea                                  | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Eritrea                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Ethiopia                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Faroe Islands                                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| French Polynesia                                   | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Gabon                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Gambia, The                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Georgia                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Ghana                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Gibraltar                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Greenland                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Grenada                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Guam                                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Guatemala                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Guinea                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Guinea-Bissau                                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Guyana                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Haiti                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Honduras                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Hong Kong SAR, China                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| India                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Indonesia                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Iran, Islamic Rep.                                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Iraq                                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Isle of Man                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Israel                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Jamaica                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Jordan                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Kazakhstan                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Kenya                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Kiribati                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Korea, Dem. People's Rep.                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Kosovo                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Kuwait                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Kyrgyz Republic                                    | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Lao PDR                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Lebanon                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Lesotho                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Liberia                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Libya                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Liechtenstein                                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Macao SAR, China                                   | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Madagascar                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Malawi                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Malaysia                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Maldives                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Mali                                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Marshall Islands                                   | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Mauritania                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Mauritius                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Micronesia, Fed. Sts.                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Moldova                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Monaco                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Montenegro                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Morocco                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Mozambique                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Myanmar                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Namibia                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Nauru                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Nepal                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| New Caledonia                                      | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Nicaragua                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Niger                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Nigeria                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Northern Mariana Islands                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Oman                                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Pakistan                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Palau                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Panama                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Papua New Guinea                                   | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Paraguay                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Peru                                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Philippines                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Puerto Rico                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Qatar                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Russian Federation                                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Rwanda                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Samoa                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| San Marino                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Sao Tome and Principe                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Saudi Arabia                                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Senegal                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Serbia                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Seychelles                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Sierra Leone                                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Singapore                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Sint Maarten (Dutch part)                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Solomon Islands                                    | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Somalia                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| South Africa                                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| South Sudan                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Sri Lanka                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| St. Kitts and Nevis                                | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| St. Lucia                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| St. Martin (French part)                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| St. Vincent and the Grenadines                     | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Sudan                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Suriname                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Swaziland                                          | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Tajikistan                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Tanzania                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Thailand                                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Timor-Leste                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Togo                                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Tonga                                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Trinidad and Tobago                                | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Tunisia                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Turkmenistan                                       | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Turks and Caicos Islands                           | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Tuvalu                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Uganda                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Ukraine                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| United Arab Emirates                               | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Uruguay                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Uzbekistan                                         | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Vanuatu                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Vietnam                                            | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Virgin Islands (U.S.)                              | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| West Bank and Gaza                                 | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Yemen, Rep.                                        | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
+| Zambia                                             | Self-employed, female (% of female employment) | SL.EMP.SELF.FE.ZS |      0.000000000000 |
++----------------------------------------------------+------------------------------------------------+-------------------+---------------------+
+206 rows in set (0.55 sec)
